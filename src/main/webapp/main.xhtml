@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+    <title>Lab 3</title>
+    <h:outputStylesheet library="css" name="styles.css"/>
+</h:head>
+<h:body>
+    <header>
+        <div class="header">
+            <div class="header-text">Kozhukhin I. A.</div>
+            <div class="header-text">P3218</div>
+            <div class="header-text">929292</div>
+        </div>
+    </header>
+    <div style="display: flex">
+        <div>
+            <div class="graph-container">
+                <canvas id="graph">graph</canvas>
+            </div>
+            <span class="dynamic-coordinate" id="dynamic-x">X: 0.00</span>
+            <span class="dynamic-coordinate" id="dynamic-y">Y: 0.00</span>
+        </div>
+        <div>
+            <div>
+                <h:form class="variables">
+                    <div class="variable">
+                        <span>X variable:</span>
+                        <h:outputText id="x" name="x" value="#{point.x} "/>
+                        <div>
+                            <h:commandButton value="-2.0" type="button" class="choose-button">
+                                <f:ajax render="x" listener="#{point.setX(-2)}"/>
+                            </h:commandButton>
+                            <h:commandButton value="-1.5" type="button" class="choose-button">
+                                <f:ajax render="x" listener="#{point.setX(-1.5)}"/>
+                            </h:commandButton>
+                            <h:commandButton value="-1.0" type="button" class="choose-button">
+                                <f:ajax render="x" listener="#{point.setX(-1)}"/>
+                            </h:commandButton>
+                            <h:commandButton value="-0.5" type="button" class="choose-button">
+                                <f:ajax render="x" listener="#{point.setX(-0.5)}"/>
+                            </h:commandButton>
+                            <h:commandButton value="0.0" type="button" class="choose-button">
+                                <f:ajax render="x" listener="#{point.setX(0)}"/>
+                            </h:commandButton>
+                            <h:commandButton value="0.5" type="button" class="choose-button">
+                                <f:ajax render="x" listener="#{point.setX(0.5)}"/>
+                            </h:commandButton>
+                            <h:commandButton value="1.0" type="button" class="choose-button">
+                                <f:ajax render="x" listener="#{point.setX(1)}"/>
+                            </h:commandButton>
+                            <h:commandButton value="1.5" type="button" class="choose-button">
+                                <f:ajax render="x" listener="#{point.setX(1.5)}"/>
+                            </h:commandButton>
+                            <h:commandButton value="2.0" type="button" class="choose-button">
+                                <f:ajax render="x" listener="#{point.setX(2)}"/>
+                            </h:commandButton>
+                        </div>
+                    </div>
+                    <div class="variable">
+                        <span>Y variable:</span>
+                        <p:inputText id="y" name="y" maxlength="10" value="#{point.y}">
+                            <f:validateDoubleRange minimum="-3" maximum="5"/>
+                        </p:inputText>
+                        <p:message for="y" display="text"/>
+                    </div>
+
+                    <div class="variable">
+                        <span>R variable:</span>
+                        <h:outputText id="r" name="x" value="#{point.r}"/>
+                        <div class="command-links">
+                            <p:commandLink value="1.0" action="#{point.setR(1)}" process="@this" update="r"
+                                           class="choose-link"/>
+                            <p:commandLink value="1.5" action="#{point.setR(1.5)}" process="@this" update="r"
+                                           class="choose-link"/>
+                            <p:commandLink value="2.0" action="#{point.setR(2)}" process="@this" update="r"
+                                           class="choose-link"/>
+                            <p:commandLink value="2.5" action="#{point.setR(2.5)}" process="@this" update="r"
+                                           class="choose-link"/>
+                            <p:commandLink value="3.0" action="#{point.setR(3)}" process="@this" update="r"
+                                           class="choose-link"/>
+                        </div>
+                    </div>
+
+                    <div class="calc-container">
+                        <p:commandButton class="calc-button" value="Calculate"/>
+                    </div>
+
+                </h:form>
+            </div>
+
+        </div>
+
+    </div>
+</h:body>
+<h:outputScript name="js/graph.js"/>
+</html>

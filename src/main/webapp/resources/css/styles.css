@@ -1,0 +1,219 @@
+body {
+    font: 14pt Bahnschrift;
+    background-color: white;
+}
+
+.header {
+    background-color: rgba(47, 109, 249, 0.5);
+    border: 3px solid black;
+    border-radius: 3px;
+    display: flex;
+    font-size: 28pt;
+    justify-content: start;
+    font-weight: bold;
+    padding: 10px 10px 10px;
+    margin-bottom: 10px;
+}
+
+.header-text {
+    margin-right: 50px;
+    color: white;
+    text-shadow: 2px 2px rgb(10, 47, 134);
+}
+
+#clock {
+    font: 120pt Bahnschrift;
+    font-weight: bold;
+    left: 0;
+    line-height: 200px;
+    margin-top: -100px;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    width: 100%;
+    transition: font-weight 200ms
+}
+
+#clock:hover {
+    font-weight: normal;
+}
+
+.variables {
+    margin-left: 15px;
+    padding: 5px 0;
+    font-weight: lighter;
+    margin-bottom: 5px;
+}
+
+input:invalid {
+    background-color: rgba(255, 0, 0, 0.3);
+}
+
+.variable {
+    margin-bottom: 10px;
+}
+
+.choose-button {
+    border: 2px solid black;
+    border-radius: 3px;
+    padding: 5px;
+    margin-top: 5px;
+    font-weight: bold;
+}
+
+.choose-button:hover {
+    cursor: pointer;
+}
+
+.command-links {
+    margin-top: 10px;
+}
+
+.choose-link {
+    margin-right: 15px;
+    font-weight: bold;
+    font-size: 18px;
+    padding: 5px;
+    border: 2px solid black;
+    border-radius: 3px;
+}
+
+.calc-container {
+    margin-top: 20px;
+}
+
+.calc-button, .return-button, #main-button {
+    border-radius: 3px;
+    border: 2px solid black;
+    padding: 10px 15px;
+    background-color: rgba(47, 109, 249, 0.5);
+    color: white;
+    font-weight: bold;
+    text-shadow: 1px 1px rgb(10, 47, 134);
+    cursor: pointer;
+    font-size: 12pt;
+    transition: background-color 150ms;
+    margin-top: 3px;
+}
+
+.calc-button:hover, .return-button:hover, #main-button:hover {
+    background-color: rgba(47, 109, 249, 0.7);
+}
+
+.calc-button:active, .return-button:active, #main-button:active {
+    background-color: rgba(47, 109, 249, 1);
+}
+
+input {
+    margin-left: 0;
+    margin-right: 10px
+}
+
+span {
+    margin-right: 10px
+}
+
+.x-text-input {
+    border-radius: 3px;
+    border-color: rgb(10, 47, 134);
+    border-width: 2px;
+    width: 175px;
+    padding: 4px;
+    text-align: center;
+}
+
+.error-message {
+    color: white;
+    font-size: 12pt;
+    font-weight: bold;
+    border-radius: 3px;
+    border: 2px solid rgb(10, 47, 134);
+    background-color: rgba(47, 109, 249, 0.5);
+    text-shadow: 1px 1px rgb(10, 47, 134);
+    padding: 5px 10px;
+}
+
+caption {
+    color: white;
+    text-shadow: 1px 1px rgb(10, 47, 134);
+    background-color: rgba(47, 109, 249, 0.5);
+    padding: 5px;
+    border-top: 3px solid black;
+    border-right: 3px solid black;
+    border-left: 3px solid black;
+    font-weight: bold;
+}
+
+.result-head {
+    font-weight: bold;
+}
+
+.graph-container {
+    width: 30vw;
+    height: 30vw;
+    border: 3px solid black;
+    margin-bottom: 10px;
+}
+
+#graph {
+    width: 100%;
+}
+
+.dynamic-coordinate {
+    margin-right: 40px;
+    font-weight: lighter;
+}
+
+table {
+    margin-top: 25px;
+    margin-left: auto;
+    margin-right: auto;
+    table-layout: fixed;
+    width: 97%;
+    border-collapse: collapse;
+    border: 3px solid black;
+    border-radius: 3px;
+}
+
+caption {
+    color: white;
+    text-shadow: 1px 1px rgb(10, 47, 134);
+    background-color: rgba(47, 109, 249, 0.5);
+    padding: 5px;
+    border-top: 3px solid black;
+    border-right: 3px solid black;
+    border-left: 3px solid black;
+    font-weight: bold;
+}
+
+thead {
+    color: white;
+    text-shadow: 1px 1px rgb(10, 47, 134);
+    background-color: rgba(47, 109, 249, 0.5);
+}
+
+td {
+    font-weight: normal;
+    padding: 4px;
+    text-align: center;
+    border-top: 1px solid black;
+    border-right: 1px solid black;
+    border-left: 1px solid black;
+}
+
+thead td {
+    border-width: 3px;
+    border-bottom: 2px solid black;
+}
+
+.result-head {
+    font-weight: bold;
+}
+
+.return-button {
+    text-decoration: none;
+}
+
+.return-button-container {
+    margin-top: 25px;
+}
