@@ -8,6 +8,7 @@ let rValue = 1
 redrawGraph(1)
 
 window.redrawGraph = redrawGraph
+window.redrawPoints = redrawPointsOnGraph
 
 let xCoordinate;
 let yCoordinate;
@@ -21,13 +22,13 @@ document.querySelector('#graph').onmousemove = function (event) {
     }
 }
 document.querySelector('#graph').onclick = async function () {
-    // await addPoint(
-    //     [
-    //         {name: "X", value: xCoordinate.toString()},
-    //         {name: "Y", value: yCoordinate.toString()},
-    //         {name: "R", value: rValue.toString()}
-    //     ]
-    // );
+    const responseData = await addPoint(
+        [
+            {name: "X", value: xCoordinate.toString()},
+            {name: "Y", value: yCoordinate.toString()},
+            {name: "R", value: rValue.toString()}
+        ]
+    );
     drawPoint(xCoordinate, yCoordinate, rValue)
 }
 
@@ -52,7 +53,7 @@ function checkHit(x, y, r) {
 }
 
 function checkRectangleHit(x, y, r) {
-    return x <= r / 2 && y <= r
+    return (x <= r / 2) && (y <= r)
 }
 
 function checkTriangleHit(x, y, r) {
@@ -70,6 +71,7 @@ function redrawGraph(newR) {
     drawAxes()
     drawArea()
     drawR(newR)
+    redrawPointsOnGraph()
 }
 
 function drawAxes() {
@@ -156,4 +158,17 @@ function drawR(newR) {
     ctx.fillText(r2, dim / 2 - r / 4.5, dim / 2 - r / 2 + r / 20);
     ctx.fillText('-' + r1, dim / 2 - r / 5, dim / 2 + r + r / 20);
     ctx.fillText('-' + r2, dim / 2 - r / 3.67, dim / 2 + r / 2 + r / 20);
+}
+
+function redrawPointsOnGraph() {
+    const table = document.getElementById("result_data");
+    console.log(table.rows)
+    if (table) {
+        for (let item of table.rows) {
+            const x = parseFloat(item.children[0].innerText.trim().replace(",", "."));
+            const y = parseFloat(item.children[1].innerText.trim().replace(",", "."));
+            if (isNaN(x) || isNaN(y)) continue;
+            drawPoint(x, y, rValue);
+        }
+    }
 }

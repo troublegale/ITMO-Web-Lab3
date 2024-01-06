@@ -2,10 +2,7 @@ package web.itmo.lab3_final.model;
 
 import jakarta.enterprise.context.SessionScoped;
 import jakarta.inject.Named;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 import java.io.Serializable;
 
@@ -15,13 +12,21 @@ import java.io.Serializable;
 @Table(name = "points", schema = "s367293")
 public class Point implements Serializable {
 
+    @Id
+    @GeneratedValue
+    private Long id;
+
     public Point() {
         this.r = 1;
     }
 
-    @Id
-    @Column(name = "id", nullable = false, unique = true)
-    private long id;
+    public Point(double x, double y, double r) {
+        this.x = x;
+        this.y = y;
+        this.r = r;
+        this.result = AreaChecker.checkHit(x, y, r);
+    }
+
     @Column(name = "x", nullable = false)
     private double x;
     @Column(name = "y", nullable = false)
@@ -30,14 +35,6 @@ public class Point implements Serializable {
     private double r;
     @Column(name = "result", nullable = false)
     private boolean result;
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
 
     public double getX() {
         return x;
@@ -71,4 +68,11 @@ public class Point implements Serializable {
         this.result = result;
     }
 
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Long getId() {
+        return id;
+    }
 }
