@@ -71,18 +71,18 @@
 
                     <div class="variable">
                         <span>R variable:</span>
-                        <h:outputText id="r" name="x" value="#{point.r}"/>
+                        <h:outputText id="r" name="r" value="#{point.r}"/>
                         <div class="command-links">
                             <p:commandLink value="1.0" action="#{point.setR(1)}" process="@this" update="r"
-                                           class="choose-link"/>
+                                           class="choose-link" onclick="window.redrawGraph(1)"/>
                             <p:commandLink value="1.5" action="#{point.setR(1.5)}" process="@this" update="r"
-                                           class="choose-link"/>
+                                           class="choose-link" onclick="window.redrawGraph(1.5)"/>
                             <p:commandLink value="2.0" action="#{point.setR(2)}" process="@this" update="r"
-                                           class="choose-link"/>
+                                           class="choose-link" onclick="window.redrawGraph(2)"/>
                             <p:commandLink value="2.5" action="#{point.setR(2.5)}" process="@this" update="r"
-                                           class="choose-link"/>
+                                           class="choose-link" onclick="window.redrawGraph(2.5)"/>
                             <p:commandLink value="3.0" action="#{point.setR(3)}" process="@this" update="r"
-                                           class="choose-link"/>
+                                           class="choose-link" onclick="window.redrawGraph(3)"/>
                         </div>
                     </div>
 
@@ -96,6 +96,8 @@
         </div>
 
     </div>
+    <h:outputScript name="js/graph.js"/>
 </h:body>
-<h:outputScript name="js/graph.js"/>
+<p:remoteCommand name="addPoint" action="#{manager.addPointWithGraph()}"
+                 process="@this" oncomplete=""/>
 </html>

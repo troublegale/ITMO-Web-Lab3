@@ -12,7 +12,7 @@ import java.io.Serializable;
 @Named("point")
 @SessionScoped
 @Entity
-@Table(name = "points")
+@Table(name = "points", schema = "s367293")
 public class Point implements Serializable {
 
     public Point() {
@@ -20,15 +20,15 @@ public class Point implements Serializable {
     }
 
     @Id
-    @Column(name = "id")
+    @Column(name = "id", nullable = false, unique = true)
     private long id;
-    @Column(name = "x")
+    @Column(name = "x", nullable = false)
     private double x;
-    @Column(name = "y")
+    @Column(name = "y", nullable = false)
     private double y;
-    @Column(name = "r")
+    @Column(name = "r", nullable = false)
     private double r;
-    @Column(name = "result")
+    @Column(name = "result", nullable = false)
     private boolean result;
 
     public long getId() {

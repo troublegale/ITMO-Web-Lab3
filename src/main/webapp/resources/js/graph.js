@@ -4,8 +4,10 @@ let dim = canvas.clientWidth
 canvas.width = dim
 canvas.height = dim
 let r = dim / 3
-rValue = 3
-redrawGraph(rValue)
+let rValue = 1
+redrawGraph(1)
+
+window.redrawGraph = redrawGraph
 
 let xCoordinate;
 let yCoordinate;
@@ -18,8 +20,51 @@ document.querySelector('#graph').onmousemove = function (event) {
         document.querySelector('#dynamic-y').innerHTML = "Y: " + yCoordinate
     }
 }
+document.querySelector('#graph').onclick = async function () {
+    // await addPoint(
+    //     [
+    //         {name: "X", value: xCoordinate.toString()},
+    //         {name: "Y", value: yCoordinate.toString()},
+    //         {name: "R", value: rValue.toString()}
+    //     ]
+    // );
+    drawPoint(xCoordinate, yCoordinate, rValue)
+}
+
+function drawPoint(x, y, r) {
+    let result = checkHit(x, y, r)
+    ctx.strokeStyle = "black"
+    ctx.fillStyle = Boolean(result) ? "green" : "red"
+    ctx.beginPath();
+    ctx.arc((x / rValue / 3 + 0.5) * dim, (-y / rValue / 3 + 0.5) * dim, 5, 0, 2 * Math.PI, false);
+    ctx.fill();
+    ctx.stroke();
+    ctx.closePath();
+}
+
+function checkHit(x, y, r) {
+    if (x >= 0) {
+        if (y >= 0) return checkRectangleHit(x, y, r)
+        return checkTriangleHit(x, y, r)
+    }
+    if (y <= 0) return checkQuarterCircleHit(x, y, r)
+    return false
+}
+
+function checkRectangleHit(x, y, r) {
+    return x <= r / 2 && y <= r
+}
+
+function checkTriangleHit(x, y, r) {
+    return y >= 2 * x - r
+}
+
+function checkQuarterCircleHit(x, y, r) {
+    return x ** 2 + y ** 2 <= r ** 2
+}
 
 function redrawGraph(newR) {
+    rValue = newR
     ctx.clearRect(0, 0, dim, dim)
     ctx.lineWidth = dim / 200
     drawAxes()

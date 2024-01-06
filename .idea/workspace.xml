@@ -4,15 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0389f658-2f38-4721-9d2a-081a9dc36047" name="Changes" comment="initial commit">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+    <list default="true" id="0389f658-2f38-4721-9d2a-081a9dc36047" name="Changes" comment="moving">
+      <change afterPath="$PROJECT_DIR$/src/main/java/web/itmo/lab3_final/dao/DatabaseManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/database.cfg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/web/itmo/lab3_final/Point.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/itmo/lab3_final/model/Point.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/web/itmo/lab3_final/model/Point.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/itmo/lab3_final/model/Point.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resources/css/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/main.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/main.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/graph.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/graph.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,6 +43,7 @@
       <list>
         <option value="JavaScript File" />
         <option value="CSS File" />
+        <option value="facelets" />
         <option value="Class" />
       </list>
     </option>
@@ -187,7 +187,10 @@
       <workItem from="1704141016088" duration="4653000" />
       <workItem from="1704295176583" duration="129000" />
       <workItem from="1704295313076" duration="697000" />
-      <workItem from="1704296098231" duration="950000" />
+      <workItem from="1704296098231" duration="3911000" />
+      <workItem from="1704304369730" duration="2880000" />
+      <workItem from="1704307339644" duration="727000" />
+      <workItem from="1704563546734" duration="2793000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <option name="closed" value="true" />
@@ -197,7 +200,15 @@
       <option name="project" value="LOCAL" />
       <updated>1704144764166</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="moving">
+      <option name="closed" value="true" />
+      <created>1704297159994</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1704297159995</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -205,6 +216,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="initial commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="initial commit" />
+    <MESSAGE value="moving" />
+    <option name="LAST_COMMIT_MESSAGE" value="moving" />
   </component>
 </project>
