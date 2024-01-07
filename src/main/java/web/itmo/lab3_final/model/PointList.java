@@ -21,7 +21,7 @@ public class PointList extends LazyDataModel<Point> {
 
     @Override
     public int count(Map<String, FilterMeta> filterBy) {
-        return manager.getCount();
+        return (int) manager.getCount();
     }
 
     @Override

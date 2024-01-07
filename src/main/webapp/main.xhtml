@@ -27,6 +27,9 @@
             </div>
             <span class="dynamic-coordinate" id="dynamic-x">X: 0.00</span>
             <span class="dynamic-coordinate" id="dynamic-y">Y: 0.00</span>
+            <div>
+                <h:button value="Go To Title Page" outcome="index.xhtml"  id="main-button"/>
+            </div>
         </div>
 
         <div>
@@ -94,7 +97,13 @@
                 <div class="calc-container">
                     <p:commandButton class="calc-button" value="Calculate"
                                      ajax="true" action="#{databaseManager.addPoint(point)}"
-                                     update="@form result redrawPoints"/>
+                                     update="@form result redrawPoints" onclick="window.redrawGraph(0)"/>
+                </div>
+
+                <div class="calc-container">
+                    <p:commandButton class="calc-button" value="Clear Table"
+                                     ajax="true" action="#{databaseManager.truncateTable()}"
+                                     update="@form result redrawPoints" onclick="window.redrawGraph(0)"/>
                 </div>
 
             </h:form>
@@ -103,24 +112,24 @@
 
         <div>
             <p:dataTable id="result" value="#{pointList}" var="item">
-                <p:column headerText="X">
+                <p:column headerText="X" style="text-align: center">
                     <h:outputText value="#{item.x}">
                         <f:convertNumber type="number"
                                          maxFractionDigits="3"
                                          groupingUsed="false"/>
                     </h:outputText>
                 </p:column>
-                <p:column headerText="Y">
+                <p:column headerText="Y" style="text-align: center">
                     <h:outputText value="#{item.y}">
                         <f:convertNumber type="number"
                                          maxFractionDigits="3"
                                          groupingUsed="false"/>
                     </h:outputText>
                 </p:column>
-                <p:column headerText="R">
+                <p:column headerText="R" style="text-align: center">
                     <h:outputText value="#{item.r}"/>
                 </p:column>
-                <p:column headerText="Result">
+                <p:column headerText="Result" style="text-align: center">
                     <h:outputText value="#{item.result ? 'Hit' : 'Miss'}"/>
                 </p:column>
             </p:dataTable>
@@ -130,15 +139,9 @@
     <h:outputScript name="js/graph.js"/>
 </h:body>
 
-<h:panelGroup id="redrawGraph">
-    <h:outputScript>
-        window.redrawGraph(#{point.r});
-    </h:outputScript>
-</h:panelGroup>
-
 <h:panelGroup id="redrawPoints">
     <h:outputScript>
-        window.redrawPoints();
+        window.redrawPointsOnGraph();
     </h:outputScript>
 </h:panelGroup>
 

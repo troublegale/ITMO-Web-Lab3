@@ -5,10 +5,13 @@ canvas.width = dim
 canvas.height = dim
 let r = dim / 3
 let rValue = 1
-redrawGraph(1)
+
+document.addEventListener('DOMContentLoaded', function () {
+    redrawGraph(1);
+})
 
 window.redrawGraph = redrawGraph
-window.redrawPoints = redrawPointsOnGraph
+window.redrawPointsOnGraph = redrawPointsOnGraph
 
 let xCoordinate;
 let yCoordinate;
@@ -65,12 +68,14 @@ function checkQuarterCircleHit(x, y, r) {
 }
 
 function redrawGraph(newR) {
-    rValue = newR
+    rValue = newR === 0 ? rValue : newR
     ctx.clearRect(0, 0, dim, dim)
     ctx.lineWidth = dim / 200
     drawAxes()
     drawArea()
-    drawR(newR)
+    if (newR === 0) {
+        drawR(rValue)
+    } else drawR(newR)
     redrawPointsOnGraph()
 }
 
@@ -162,12 +167,12 @@ function drawR(newR) {
 
 function redrawPointsOnGraph() {
     const table = document.getElementById("result_data");
-    console.log(table.rows)
     if (table) {
         for (let item of table.rows) {
+            if (item.children[1] === undefined) continue
             const x = parseFloat(item.children[0].innerText.trim().replace(",", "."));
             const y = parseFloat(item.children[1].innerText.trim().replace(",", "."));
-            if (isNaN(x) || isNaN(y)) continue;
+            if (isNaN(x) || isNaN(y) || x === undefined || y === undefined) continue
             drawPoint(x, y, rValue);
         }
     }
