@@ -18,8 +18,8 @@ let yCoordinate;
 document.querySelector('#graph').onmousemove = function (event) {
     event = event || window.event
     if (!isNaN(rValue)) {
-        xCoordinate = ((event.offsetX / dim - 0.5) * 3 * rValue).toFixed(2)
-        yCoordinate = -((event.offsetY / dim - 0.5) * 3 * rValue).toFixed(2)
+        xCoordinate = ((event.offsetX / dim - 0.5) * 3 * rValue).toFixed(4)
+        yCoordinate = -((event.offsetY / dim - 0.5) * 3 * rValue).toFixed(4)
         document.querySelector('#dynamic-x').innerHTML = "X: " + xCoordinate
         document.querySelector('#dynamic-y').innerHTML = "Y: " + yCoordinate
     }
@@ -40,7 +40,7 @@ function drawPoint(x, y, r) {
     ctx.strokeStyle = "black"
     ctx.fillStyle = Boolean(result) ? "green" : "red"
     ctx.beginPath();
-    ctx.arc((x / rValue / 3 + 0.5) * dim, (-y / rValue / 3 + 0.5) * dim, 5, 0, 2 * Math.PI, false);
+    ctx.arc((x / (rValue * 3) + 0.5) * dim, (-y / (rValue * 3) + 0.5) * dim, 5, 0, 2 * Math.PI, false);
     ctx.fill();
     ctx.stroke();
     ctx.closePath();
@@ -68,14 +68,13 @@ function checkQuarterCircleHit(x, y, r) {
 }
 
 function redrawGraph(newR) {
-    rValue = newR === 0 ? rValue : newR
     ctx.clearRect(0, 0, dim, dim)
     ctx.lineWidth = dim / 200
     drawAxes()
     drawArea()
-    if (newR === 0) {
-        drawR(rValue)
-    } else drawR(newR)
+    if (newR > 0) rValue = newR
+    drawR(rValue)
+    if (newR < 0) return
     redrawPointsOnGraph()
 }
 

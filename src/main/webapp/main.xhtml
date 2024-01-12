@@ -103,7 +103,7 @@
                 <div class="calc-container">
                     <p:commandButton class="calc-button" value="Clear Table"
                                      ajax="true" action="#{databaseManager.truncateTable()}"
-                                     update="@form result redrawPoints" onclick="window.redrawGraph(0)"/>
+                                     update="@form result redrawPoints" onclick="window.redrawGraph(-1)"/>
                 </div>
 
             </h:form>
@@ -115,14 +115,14 @@
                 <p:column headerText="X" style="text-align: center">
                     <h:outputText value="#{item.x}">
                         <f:convertNumber type="number"
-                                         maxFractionDigits="3"
+                                         maxFractionDigits="4"
                                          groupingUsed="false"/>
                     </h:outputText>
                 </p:column>
                 <p:column headerText="Y" style="text-align: center">
                     <h:outputText value="#{item.y}">
                         <f:convertNumber type="number"
-                                         maxFractionDigits="3"
+                                         maxFractionDigits="4"
                                          groupingUsed="false"/>
                     </h:outputText>
                 </p:column>
