@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0389f658-2f38-4721-9d2a-081a9dc36047" name="Changes" comment="moved enough">
+    <list default="true" id="0389f658-2f38-4721-9d2a-081a9dc36047" name="Changes" comment="amongus">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/main.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/main.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/graph.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/graph.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/web/itmo/lab3_final/database/ConnectionEstablisher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/itmo/lab3_final/database/ConnectionEstablisher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/web/itmo/lab3_final/model/Point.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/itmo/lab3_final/model/Point.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -241,7 +241,11 @@
       <workItem from="1704592763509" duration="1859000" />
       <workItem from="1704625153516" duration="974000" />
       <workItem from="1705004773797" duration="162000" />
-      <workItem from="1705004954731" duration="2988000" />
+      <workItem from="1705004954731" duration="3614000" />
+      <workItem from="1705844343000" duration="716000" />
+      <workItem from="1706025818838" duration="48000" />
+      <workItem from="1706206951021" duration="1876000" />
+      <workItem from="1714578824957" duration="1132000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <option name="closed" value="true" />
@@ -283,7 +287,15 @@
       <option name="project" value="LOCAL" />
       <updated>1704591015286</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="amongus">
+      <option name="closed" value="true" />
+      <created>1705065607322</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1705065607322</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -295,6 +307,7 @@
     <MESSAGE value="moving on" />
     <MESSAGE value="moving on and on" />
     <MESSAGE value="moved enough" />
-    <option name="LAST_COMMIT_MESSAGE" value="moved enough" />
+    <MESSAGE value="amongus" />
+    <option name="LAST_COMMIT_MESSAGE" value="amongus" />
   </component>
 </project>

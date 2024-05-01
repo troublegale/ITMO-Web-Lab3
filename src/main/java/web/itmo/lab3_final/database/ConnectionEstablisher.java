@@ -5,7 +5,7 @@ import jakarta.persistence.Persistence;
 
 import java.util.Properties;
 
-public class ConnectionEstablisher  {
+public class ConnectionEstablisher {
 
     private static final EntityManagerFactory factory;
 

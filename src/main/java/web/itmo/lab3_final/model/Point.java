@@ -1,12 +1,10 @@
 package web.itmo.lab3_final.model;
 
 import jakarta.enterprise.context.SessionScoped;
-import jakarta.faces.context.FacesContext;
 import jakarta.inject.Named;
 import jakarta.persistence.*;
 
 import java.io.Serializable;
-import java.util.Locale;
 
 @Named("point")
 @SessionScoped
@@ -15,15 +13,6 @@ import java.util.Locale;
 public class Point implements Serializable {
 
     @Id
-//    @GeneratedValue(
-//            strategy = GenerationType.SEQUENCE,
-//            generator = "sequence-generator"
-//    )
-//    @SequenceGenerator(
-//            name = "sequence-generator",
-//            sequenceName = "the_points_id_seq",
-//            allocationSize = 1
-//    )
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
