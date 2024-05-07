@@ -45,3 +45,29 @@ dependencies {
 test {
     useJUnitPlatform()
 }
+
+tasks.register('scp', Exec) {
+    dependsOn 'war'
+    group = 'opi'
+    description = 'Builds the war archive and sends it to Helios via SCP.'
+    doFirst { println 'Sending war to Helios...' }
+    doLast { println 'Done!' }
+    commandLine 'scp', '-P', '2222', warPath, heliosAddress
+}
+
+tasks.register('report') {
+    dependsOn 'test'
+    group = 'opi'
+    description = 'Runs tests and if they have succeeded adds the report xml file to git and commits.'
+    doLast {
+        def reportFile = file(testReportPath)
+        if (reportFile.exists()) {
+            println 'Committing test report...'
+            exec { commandLine 'git', 'add', '-f', testReportPath }
+            exec { commandLine 'git', 'commit', '-m', 'added test report' }
+            println 'Done!'
+        } else {
+            println 'Tests didn\'t succeed or test report wasn\'t found.'
+        }
+    }
+}
