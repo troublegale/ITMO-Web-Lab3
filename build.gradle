@@ -105,7 +105,7 @@ tasks.register('diff') {
             if (!isExcluded) {
                 println 'Committing to git...'
                 exec { commandLine 'git', 'add', '.' }
-                exec { commandLine 'git', 'commit', '-m', 'Committing changes' }
+                exec { commandLine 'git', 'commit', '-m', 'executed diff' }
             }
         }
     }

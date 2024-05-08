@@ -5,8 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0389f658-2f38-4721-9d2a-081a9dc36047" name="Changes" comment="opi pt2">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/web/itmo/lab3_final/database/DatabaseManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/itmo/lab3_final/database/DatabaseManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -368,7 +367,7 @@
       <workItem from="1714990025700" duration="1563000" />
       <workItem from="1714992859528" duration="7002000" />
       <workItem from="1715084401050" duration="11239000" />
-      <workItem from="1715195324630" duration="1798000" />
+      <workItem from="1715195324630" duration="1931000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <option name="closed" value="true" />
