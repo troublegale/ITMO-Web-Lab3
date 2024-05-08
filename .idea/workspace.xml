@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0389f658-2f38-4721-9d2a-081a9dc36047" name="Changes" comment="opi">
-      <change afterPath="$PROJECT_DIR$/src/test/java/AreaCheckerTest.java" afterDir="false" />
+    <list default="true" id="0389f658-2f38-4721-9d2a-081a9dc36047" name="Changes" comment="opi pt2">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/web/itmo/lab3_final/database/DatabaseManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/itmo/lab3_final/database/DatabaseManager.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,7 +48,7 @@
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="Lab3_Final" type="f1a62948:ProjectNode" />
                 <item name="Tasks" type="e4a08cd1:TasksNode" />
-                <item name="verification" type="c8890929:TasksNode$1" />
+                <item name="opi" type="c8890929:TasksNode$1" />
               </path>
             </expand>
             <select />
@@ -80,55 +82,58 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Gradle.Build Lab3_Final.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.Lab3_Final [buildDependents].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.Lab3_Final [build].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.Lab3_Final [check].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.Lab3_Final [classes --rerun].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.Lab3_Final [classes].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.Lab3_Final [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.Lab3_Final [dependencies].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.Lab3_Final [help --task assemble].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.Lab3_Final [help --task build].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.Lab3_Final [help --task classes].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.Lab3_Final [help].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.Lab3_Final [testClasses].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.Lab3_Final [test].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.Lab3_Final [war].executor&quot;: &quot;Run&quot;,
-    &quot;JBoss/WildFly Server.JBoss/WildFly 30.0.0.Final.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Problems&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.project.gradle&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Gradle.Build Lab3_Final.executor": "Run",
+    "Gradle.Lab3_Final [buildDependents].executor": "Run",
+    "Gradle.Lab3_Final [build].executor": "Run",
+    "Gradle.Lab3_Final [check].executor": "Run",
+    "Gradle.Lab3_Final [classes --rerun].executor": "Run",
+    "Gradle.Lab3_Final [classes].executor": "Run",
+    "Gradle.Lab3_Final [clean].executor": "Run",
+    "Gradle.Lab3_Final [dependencies].executor": "Run",
+    "Gradle.Lab3_Final [diff].executor": "Run",
+    "Gradle.Lab3_Final [help --task assemble].executor": "Run",
+    "Gradle.Lab3_Final [help --task build].executor": "Run",
+    "Gradle.Lab3_Final [help --task classes].executor": "Run",
+    "Gradle.Lab3_Final [help].executor": "Run",
+    "Gradle.Lab3_Final [report].executor": "Run",
+    "Gradle.Lab3_Final [scp].executor": "Run",
+    "Gradle.Lab3_Final [testClasses].executor": "Run",
+    "Gradle.Lab3_Final [test].executor": "Run",
+    "Gradle.Lab3_Final [war].executor": "Run",
+    "JBoss/WildFly Server.JBoss/WildFly 30.0.0.Final.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Problems",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;postgresql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="K:\Projects\Web Labs\Lab3_Final\src\main\webapp\resources" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.Lab3_Final [build]">
+  <component name="RunManager" selected="Gradle.Lab3_Final [diff]">
     <configuration name="Lab3_Final [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -151,7 +156,7 @@
       <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="Lab3_Final [check]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="Lab3_Final [diff]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -162,7 +167,7 @@
         </option>
         <option name="taskNames">
           <list>
-            <option value="check" />
+            <option value="diff" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -173,7 +178,7 @@
       <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="Lab3_Final [testClasses]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="Lab3_Final [report]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -184,7 +189,7 @@
         </option>
         <option name="taskNames">
           <list>
-            <option value="testClasses" />
+            <option value="report" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -195,7 +200,7 @@
       <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="Lab3_Final [test]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="Lab3_Final [scp]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -206,7 +211,7 @@
         </option>
         <option name="taskNames">
           <list>
-            <option value="test" />
+            <option value="scp" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -312,20 +317,20 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="Gradle.Lab3_Final [diff]" />
+      <item itemvalue="Gradle.Lab3_Final [report]" />
+      <item itemvalue="Gradle.Lab3_Final [scp]" />
       <item itemvalue="Gradle.Lab3_Final [build]" />
-      <item itemvalue="Gradle.Lab3_Final [check]" />
-      <item itemvalue="Gradle.Lab3_Final [testClasses]" />
-      <item itemvalue="Gradle.Lab3_Final [test]" />
       <item itemvalue="Gradle.Lab3_Final [war]" />
       <item itemvalue="JBoss/WildFly Server.JBoss/WildFly 30.0.0.Final" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.Lab3_Final [diff]" />
+        <item itemvalue="Gradle.Lab3_Final [report]" />
+        <item itemvalue="Gradle.Lab3_Final [scp]" />
         <item itemvalue="Gradle.Lab3_Final [build]" />
         <item itemvalue="Gradle.Lab3_Final [war]" />
-        <item itemvalue="Gradle.Lab3_Final [test]" />
-        <item itemvalue="Gradle.Lab3_Final [check]" />
-        <item itemvalue="Gradle.Lab3_Final [testClasses]" />
       </list>
     </recent_temporary>
   </component>
@@ -364,6 +369,8 @@
       <workItem from="1714578824957" duration="1846000" />
       <workItem from="1714990025700" duration="1563000" />
       <workItem from="1714992859528" duration="7002000" />
+      <workItem from="1715084401050" duration="11239000" />
+      <workItem from="1715195324630" duration="1427000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <option name="closed" value="true" />
@@ -421,7 +428,15 @@
       <option name="project" value="LOCAL" />
       <updated>1714580088053</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="opi pt2">
+      <option name="closed" value="true" />
+      <created>1715092259488</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1715092259488</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -435,6 +450,7 @@
     <MESSAGE value="moved enough" />
     <MESSAGE value="amongus" />
     <MESSAGE value="opi" />
-    <option name="LAST_COMMIT_MESSAGE" value="opi" />
+    <MESSAGE value="opi pt2" />
+    <option name="LAST_COMMIT_MESSAGE" value="opi pt2" />
   </component>
 </project>

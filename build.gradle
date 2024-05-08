@@ -50,8 +50,7 @@ tasks.register('scp', Exec) {
     dependsOn 'war'
     group = 'opi'
     description = 'Builds the war archive and sends it to Helios via SCP.'
-    doFirst { println 'Sending war to Helios...' }
-    doLast { println 'Done!' }
+    doFirst { println 'Sending war to Helios.' }
     commandLine 'scp', '-P', '2222', warPath, heliosAddress
 }
 
@@ -62,12 +61,52 @@ tasks.register('report') {
     doLast {
         def reportFile = file(testReportPath)
         if (reportFile.exists()) {
-            println 'Committing test report...'
-            exec { commandLine 'git', 'add', '-f', testReportPath }
-            exec { commandLine 'git', 'commit', '-m', 'added test report' }
-            println 'Done!'
+            println 'Adding test report to commit.'
+            def stdout = new ByteArrayOutputStream()
+            def gitStatus = exec {
+                commandLine 'git', 'status', '--porcelain', testReportPath
+                standardOutput = stdout
+            }
+            if (gitStatus.getExitValue() == 0 && stdout.toString().trim() != '') {
+                println 'Committing test report.'
+                exec { commandLine 'git', 'add', '-f', testReportPath }
+                exec { commandLine 'git', 'commit', '-m', 'added test report' }
+            } else {
+                println 'No changes in test report. Skipping commit.'
+            }
         } else {
-            println 'Tests didn\'t succeed or test report wasn\'t found.'
+            println 'Tests failed or test report wasn\'t found.'
+        }
+    }
+}
+
+tasks.register('diff') {
+    group = 'opi'
+    description = 'Commits changes to git if specified classes were not changed.'
+    doLast {
+        def stdout = new ByteArrayOutputStream()
+        def diff = exec {
+            commandLine 'git', 'diff', '--name-only'
+            standardOutput = stdout
+        }
+        def changedFiles = stdout.toString().split()
+        if (diff.getExitValue() != 0 || stdout.toString().trim() == '') {
+            println 'No changes. Skipping commit'
+        } else {
+            def excluded = excludedClasses.split()
+            def isExcluded = false
+            excluded.each { excludedClass ->
+                if (changedFiles.contains("${excludedClass}.java")) {
+                    isExcluded = true
+                    println "Changes affect ${excludedClass}. Skipping commit."
+                    return
+                }
+            }
+            if (!isExcluded) {
+                println 'Committing to git...'
+                exec { commandLine 'git', 'add', '.' }
+                exec { commandLine 'git', 'commit', '-m', 'Committing changes' }
+            }
         }
     }
 }
