@@ -23,7 +23,7 @@ public class DatabaseManager implements Serializable {
 
     private final EntityManager entityManager = ConnectionEstablisher.getFactory().createEntityManager();
 
-    // SUPER AMOGUS
+    // SUPER AMOGUS asdasdad
 
     @Transactional
     public void addPoint(Point point) {
