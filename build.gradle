@@ -93,8 +93,7 @@ tasks.register('diff') {
         if (diff.getExitValue() != 0 || stdout.toString().trim() == '') {
             println 'No changes. Skipping commit'
         } else {
-            def excluded = excludedClasses.split("\\.")
-            println excluded
+            def excluded = excludedClasses.split()
             def isExcluded = false
             excluded.each { excludedClass ->
                 if (changedFiles.contains("${excludedClass}.java")) {
