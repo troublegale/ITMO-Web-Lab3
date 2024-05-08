@@ -93,7 +93,7 @@ tasks.register('diff') {
         if (diff.getExitValue() != 0 || stdout.toString().trim() == '') {
             println 'No changes. Skipping commit'
         } else {
-            def excluded = excludedClasses.split(".")
+            def excluded = excludedClasses.split("\\.")
             println excluded
             def isExcluded = false
             excluded.each { excludedClass ->
