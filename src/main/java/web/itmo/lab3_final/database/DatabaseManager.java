@@ -10,6 +10,7 @@ import jakarta.persistence.criteria.CriteriaQuery;
 import jakarta.persistence.criteria.Root;
 import jakarta.transaction.Transactional;
 import org.primefaces.PrimeFaces;
+import web.itmo.lab3_final.Messages;
 import web.itmo.lab3_final.model.AreaChecker;
 import web.itmo.lab3_final.model.Point;
 
@@ -51,7 +52,7 @@ public class DatabaseManager implements Serializable {
             addPoint(point);
             PrimeFaces.current().ajax().addCallbackParam("isResult", point.isResult());
         } catch (IllegalArgumentException | NullPointerException e) {
-            System.err.println("Wrong arguments were likely passed: " + e);
+            System.err.println(Messages.getWrongArgsAdd() + " " + e);
         }
     }
 

@@ -2,6 +2,7 @@ package web.itmo.lab3_final.database;
 
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
+import web.itmo.lab3_final.Messages;
 
 import java.util.Properties;
 
@@ -20,7 +21,7 @@ public class ConnectionEstablisher {
                     .getResourceAsStream("/database.cfg"));
             factory = Persistence.createEntityManagerFactory("default", properties);
         } catch (Exception e) {
-            System.err.println("Something went wrong while establishing connection with EclipseLink: " + e);
+            System.err.println(Messages.getEclipseEstablishError() + " " + e);
             throw new ExceptionInInitializerError();
         }
     }

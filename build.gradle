@@ -1,3 +1,5 @@
+import java.nio.file.Files
+
 plugins {
     id 'java'
     id 'war'
@@ -105,8 +107,73 @@ tasks.register('diff') {
             if (!isExcluded) {
                 println 'Committing to git...'
                 exec { commandLine 'git', 'add', '.' }
-                exec { commandLine 'git', 'commit', '-m', 'executed diff' }
+                exec { commandLine 'git', 'commit', '-m', 'executed diff task' }
             }
         }
     }
+}
+
+tasks.register('xml', Exec) {
+    group = 'opi'
+    description = 'Validates xml files.'
+    commandLine 'python', 'validate_xml.py', '.'
+}
+
+tasks.register('native2ascii') {
+    group = 'opi'
+    description = 'Converts localization.properties ' +
+            'from native encoding to ASCII.'
+
+    def srcFile = file(localizationPath)
+    def destFile = file(asciiLocalizationPath)
+    inputs.file(srcFile)
+    outputs.file(destFile)
+    doLast {
+        destFile.parentFile.mkdirs()
+        def properties = new Properties()
+        srcFile.withReader('UTF-8') { reader ->
+            properties.load(reader)
+        }
+        destFile.withWriter('ASCII') { writer ->
+            properties.store(writer, null)
+        }
+    }
+}
+
+tasks.register('alt', Jar) {
+    group = 'opi'
+    description = 'Creates an alternative version of the program.'
+
+    def baseDir = file('src/main/java')
+    def altDir = file("$buildDir/altJava")
+
+    copy {
+        from baseDir
+        into altDir
+    }
+
+    fileTree(altDir).matching {
+        include '**/Messages.java'
+    }.each { file ->
+        def newFileName = file.path.replace(
+                'Messages.java', 'ErrorMessages.java')
+        file.renameTo(new File(newFileName))
+    }
+
+    def messagesFile = file(
+            "$altDir/web/itmo/lab3_final/Messages.java")
+    messagesFile.delete()
+
+    fileTree(altDir).each { file ->
+        file.text = file.text.replaceAll(
+                ' Messages ', ' ErrorMessages ')
+    }
+
+    def errorMessagesFile = file(
+            "$altDir/web/itmo/lab3_final/ErrorMessages.java")
+    errorMessagesFile.text = errorMessagesFile
+            .text.replaceAll('bundle', 'rb')
+
+    archiveFileName.set("Lab3_ALT.jar")
+    from altDir
 }
