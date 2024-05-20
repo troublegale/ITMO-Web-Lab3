@@ -140,7 +140,7 @@
       <recent name="K:\Projects\Web Labs\Lab3_Final\src\main\webapp\resources" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.Lab3_Final [scp]">
+  <component name="RunManager" selected="Gradle.Lab3_Final [report]">
     <configuration name="Lab3_Final [alt]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -185,6 +185,28 @@
       <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
+    <configuration name="Lab3_Final [report]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="report" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
     <configuration name="Lab3_Final [scp]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -197,28 +219,6 @@
         <option name="taskNames">
           <list>
             <option value="scp" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>false</RunAsTest>
-      <method v="2" />
-    </configuration>
-    <configuration name="Lab3_Final [war]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="war" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -325,6 +325,8 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.Lab3_Final [report]" />
+        <item itemvalue="Gradle.Lab3_Final [xml]" />
         <item itemvalue="Gradle.Lab3_Final [scp]" />
         <item itemvalue="Gradle.Lab3_Final [alt]" />
         <item itemvalue="Gradle.Lab3_Final [native2ascii]" />
