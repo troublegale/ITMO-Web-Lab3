@@ -4,21 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0389f658-2f38-4721-9d2a-081a9dc36047" name="Changes" comment="time to die">
-      <change afterPath="$PROJECT_DIR$/src/main/java/web/itmo/lab3_final/Messages.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/ascii/localization.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/localization.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/validate_xml.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/47a6754d-408e-40d4-b27f-b3e38ab36dcd.xml" beforeDir="false" />
+    <list default="true" id="0389f658-2f38-4721-9d2a-081a9dc36047" name="Changes" comment="dwewdwd">
+      <change afterPath="$PROJECT_DIR$/src/main/java/web/itmo/lab3_final/mbeans/HitPercentage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/web/itmo/lab3_final/mbeans/HitPercentageMBean.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/web/itmo/lab3_final/mbeans/PointsCounter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/web/itmo/lab3_final/mbeans/PointsCounterMBean.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/47a6754d-408e-40d4-b27f-b3e38ab36dcd/storage_v2/_src_/database/studs.ww2LBg/schema/s367293.S36GHQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/47a6754d-408e-40d4-b27f-b3e38ab36dcd/storage_v2/_src_/database/studs.ww2LBg/schema/s367293.S36GHQ.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/web/itmo/lab3_final/database/ConnectionEstablisher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/itmo/lab3_final/database/ConnectionEstablisher.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/web/itmo/lab3_final/database/DatabaseManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/itmo/lab3_final/database/DatabaseManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/ascii/localization.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/ascii/localization.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -140,7 +135,7 @@
       <recent name="K:\Projects\Web Labs\Lab3_Final\src\main\webapp\resources" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.Lab3_Final [report]">
+  <component name="RunManager" selected="JBoss/WildFly Server.JBoss/WildFly 30.0.0.Final">
     <configuration name="Lab3_Final [alt]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -153,6 +148,28 @@
         <option name="taskNames">
           <list>
             <option value="alt" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="Lab3_Final [diff]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="diff" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -219,28 +236,6 @@
         <option name="taskNames">
           <list>
             <option value="scp" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>false</RunAsTest>
-      <method v="2" />
-    </configuration>
-    <configuration name="Lab3_Final [xml]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="xml" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -325,11 +320,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.Lab3_Final [report]" />
-        <item itemvalue="Gradle.Lab3_Final [xml]" />
         <item itemvalue="Gradle.Lab3_Final [scp]" />
-        <item itemvalue="Gradle.Lab3_Final [alt]" />
         <item itemvalue="Gradle.Lab3_Final [native2ascii]" />
+        <item itemvalue="Gradle.Lab3_Final [alt]" />
+        <item itemvalue="Gradle.Lab3_Final [diff]" />
+        <item itemvalue="Gradle.Lab3_Final [report]" />
       </list>
     </recent_temporary>
   </component>
@@ -379,6 +374,14 @@
       <workItem from="1715359205332" duration="2828000" />
       <workItem from="1715549098591" duration="7000" />
       <workItem from="1716219480716" duration="9019000" />
+      <workItem from="1716228573928" duration="451000" />
+      <workItem from="1716235262634" duration="951000" />
+      <workItem from="1716270042436" duration="3065000" />
+      <workItem from="1717485073464" duration="344000" />
+      <workItem from="1717581662524" duration="13000" />
+      <workItem from="1717841411666" duration="1127000" />
+      <workItem from="1717928744458" duration="3946000" />
+      <workItem from="1717932756416" duration="1263000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <option name="closed" value="true" />
@@ -452,7 +455,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715197772158</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="dwewdwd">
+      <option name="closed" value="true" />
+      <created>1716228738511</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1716228738511</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -469,6 +480,7 @@
     <MESSAGE value="added test report" />
     <MESSAGE value="opi pt2" />
     <MESSAGE value="time to die" />
-    <option name="LAST_COMMIT_MESSAGE" value="time to die" />
+    <MESSAGE value="dwewdwd" />
+    <option name="LAST_COMMIT_MESSAGE" value="dwewdwd" />
   </component>
 </project>

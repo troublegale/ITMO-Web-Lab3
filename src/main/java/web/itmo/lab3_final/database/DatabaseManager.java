@@ -1,5 +1,6 @@
 package web.itmo.lab3_final.database;
 
+import jakarta.annotation.PostConstruct;
 import jakarta.enterprise.context.SessionScoped;
 import jakarta.faces.context.FacesContext;
 import jakarta.inject.Named;
@@ -11,10 +12,16 @@ import jakarta.persistence.criteria.Root;
 import jakarta.transaction.Transactional;
 import org.primefaces.PrimeFaces;
 import web.itmo.lab3_final.Messages;
+import web.itmo.lab3_final.mbeans.*;
 import web.itmo.lab3_final.model.AreaChecker;
 import web.itmo.lab3_final.model.Point;
 
+import javax.management.MBeanServer;
+import javax.management.NotificationListener;
+import javax.management.ObjectName;
+import javax.management.StandardMBean;
 import java.io.Serializable;
+import java.lang.management.ManagementFactory;
 import java.util.List;
 import java.util.Map;
 
@@ -23,6 +30,27 @@ import java.util.Map;
 public class DatabaseManager implements Serializable {
 
     private final EntityManager entityManager = ConnectionEstablisher.getFactory().createEntityManager();
+    private PointsCounterMBean pointsCounter;
+    private HitPercentageMBean hitPercentage;
+
+    @PostConstruct
+    public void registerMBeans() {
+        try {
+            MBeanServer mbs = ManagementFactory.getPlatformMBeanServer();
+            ObjectName pointsCounterName = new ObjectName("web.itmo.lab3_final.mbeans:type=PointsCounter");
+            pointsCounter = new PointsCounter(this);
+            mbs.registerMBean(pointsCounter, pointsCounterName);
+            NotificationListener listener = (notification, handback) ->
+                    System.out.println("Received notification: " + notification.getMessage());
+            mbs.addNotificationListener(pointsCounterName, listener, null, null);
+            hitPercentage = new HitPercentage(pointsCounter);
+            ObjectName missPercentageName = new ObjectName("web.itmo.lab3_final.mbeans:type=HitPercentage");
+            StandardMBean missPercentageMBean = new StandardMBean(hitPercentage, HitPercentageMBean.class);
+            mbs.registerMBean(missPercentageMBean, missPercentageName);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 
     @Transactional
     public void addPoint(Point point) {
@@ -31,6 +59,10 @@ public class DatabaseManager implements Serializable {
         newPoint.setY(point.getY());
         newPoint.setR(point.getR());
         newPoint.setResult(AreaChecker.checkHit(point.getX(), point.getY(), point.getR()));
+        pointsCounter.incrementTotalPoints();
+        if (newPoint.isResult()) {
+            pointsCounter.incrementHitPoints();
+        }
         entityManager.getTransaction().begin();
         entityManager.persist(newPoint);
         entityManager.getTransaction().commit();
@@ -77,6 +109,7 @@ public class DatabaseManager implements Serializable {
         Query query = entityManager.createNativeQuery(sql);
         query.executeUpdate();
         entityManager.getTransaction().commit();
+        pointsCounter.initializeCounters();
     }
 
 }
